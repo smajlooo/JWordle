@@ -34,7 +34,7 @@ void main() {
 
                 System.out.println(word);
 
-                guessWord("hello", "hello");
+                guessWord("whale", "hello");
                 guessWord(word, "bingo");
                 guessWord(word, "prank");
                 guessWord(word, "theft");
@@ -48,12 +48,11 @@ void main() {
 public static void guessWord(String word, String guess) {
 
         for (int i = 0; i < word.length(); i++) {
-                for (int j = 0; j < word.length(); j++) {
-                        if (i == j && word.charAt(i) == guess.charAt(i)) {
-                                System.out.print(GREEN + guess.charAt(i) + RESET);
-                        } else if (i != j && word.charAt(i) == guess.charAt(j)) {
-                                System.out.print(YELLOW + guess.charAt(i) + RESET);
-                        }
+
+                if (word.charAt(i) == guess.charAt(i)) {
+                        System.out.print(GREEN + guess.charAt(i) + RESET);
+                } else {
+                        System.out.print(RED + guess.charAt(i) + RESET);
                 }
         }
 
